@@ -1,0 +1,104 @@
+@import './globals..scss';
+
+.latest_section{
+    margin: 50px 0;
+
+    h1{
+        margin: 25px 0;
+    }
+
+    #all_product{
+
+        a{
+            margin-top: 25px;
+            width: 300px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: bold;
+        }
+        
+    }
+
+    .latest-product{
+        display: flex;
+        overflow: hidden;
+
+        .product{
+            width: 285px;
+            margin-left: 25px;
+
+            .product-image{
+                background: #EDEDED;
+                height: 400px;
+    
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                    transition: all 0.2s ease;
+
+                    &:hover{
+                        object-fit: cover;
+                    }
+                }
+            }
+    
+            .product-description{
+                height: 100px;
+                margin-top: 25px;
+    
+                a{
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: black;
+    
+                    &:hover{
+                        color: #000;
+                    }
+                }
+    
+                h6{
+                    color: #3f3b3b;
+                    
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    
+    .latest_section{
+
+        .latest-product{
+            overflow: scroll;
+            padding-bottom: 50px;
+            margin-right: 50px;
+
+            .product{
+
+                .product-image{
+
+                    img{
+
+                        &:hover{
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    
+    .latest_section{
+
+        .latest-product{
+            padding-bottom: 25px;
+            margin-right: 25px;
+        }
+    }
+}

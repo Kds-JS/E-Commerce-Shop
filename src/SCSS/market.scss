@@ -1,0 +1,174 @@
+@import './globals..scss';
+
+.shop{
+    padding: 0 8%;
+}
+
+.market-banner{
+    @include flex-1(row,center);
+    height: 80px;
+    background: $color-light-100;
+}
+
+.market-section{
+    overflow-x: hidden;
+    width: 100%;
+    margin-top: 70px;
+    padding-bottom: 50px;
+
+    .category{
+        background: $color-light-100;
+        padding-bottom: 25px;
+
+        div{
+            padding: 10px 0;
+            border-bottom: 1px solid silver;
+            padding: 10px 25px;
+        }
+
+        ul{
+            padding: 0;
+            margin: 20px 25px;
+
+            li{
+                padding: 0;
+                @include flex-1(row, space-between);
+                font-size: 20px;
+                margin-top: 20px;
+                cursor: pointer;
+
+                &:hover{
+                    color: $color-blue;
+                }
+
+                span{
+                    height: 30px;
+                    width: 50px;
+                    border-radius: 45%;
+                    @include flex-1(row, center);
+                    color: white;
+                    background: $color-blue-100;
+                }
+            }
+        }
+    }
+
+
+    .product{
+
+        .product-image{
+            background: #EDEDED;
+            height: 400px;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+
+                &:hover{
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .product-description{
+            height: 100px;
+            margin-top: 25px;
+
+            a{
+                font-size: 20px;
+                font-weight: 600;
+                color: black;
+
+                &:hover{
+                    color: #000;
+                }
+            }
+
+            h6{
+                color: #3f3b3b;
+                
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .shop{
+        padding: 0;
+    }
+    
+    .market-section{
+
+        .category{
+            padding-bottom: 25px;
+            background: white;
+
+            div{
+                border-bottom: none;
+                
+            }
+
+            ul{
+                padding: 0;
+                margin: 0 25px;
+                @include flex-1(row,space-between);
+
+                li{
+                    margin: 0;
+                    
+
+                    span{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .products{
+            padding: 0 40px;
+            
+
+            .product-image{
+
+                img{
+
+                    &:hover{
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .market-section{
+
+        .category{
+
+            ul{
+                display: block;
+                li{
+                    display: inline-block;
+                    margin-right: 25px;
+                    
+                    &#list-one{
+                        display: block;
+                    }
+                    
+
+                }
+            }
+        }
+
+
+        .products{
+            padding: 0 25px;
+        }
+    }
+}
