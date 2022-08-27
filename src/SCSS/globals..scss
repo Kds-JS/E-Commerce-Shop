@@ -15,7 +15,9 @@ $font-family:"Manrope";
   align-items: center;
 }
 
-*{
+*,
+*::after,
+*::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box!important;
@@ -26,6 +28,7 @@ $font-family:"Manrope";
 body{
   background: $bg-body;
 }
+
 
 a{
     text-decoration: none;

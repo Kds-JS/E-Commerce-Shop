@@ -1,0 +1,144 @@
+@import './globals..scss';
+
+.detail-section {
+    overflow: hidden;
+    padding: 0 8%;
+    margin: 50px 0 100px 0;
+
+    .detail-image{
+        margin-right: 50px;
+
+        .small-image{
+
+            @include flex-1(column,flex-start);
+            
+
+            div{
+                background: #DFD5CD;
+                margin-bottom: 25px;
+                height: 80px;
+                padding: 10px;
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    
+                }
+            }
+        }
+
+        .big-image{
+            
+            background: #efebe7;
+            height: 650px;
+            // width: 80%;
+            padding: 25px 25px 0 25px;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .detail-description{
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        h1{
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        p{
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        a{
+            cursor: pointer; 
+            clear: both;  
+            border-radius: 3px; 
+            padding: 20px 140px;
+            transition: all 0.8s, color 0.6s 0.3s;
+            background: $color-blue ; 
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            
+            
+            
+            &:hover{ 
+                box-shadow:300px 0 0 0 rgba(255,255,255,0.5) inset;
+                background: White;
+                color: $color-blue;
+
+                border: 2px solid $color-blue;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    
+    .detail-section{
+        padding: 0;
+
+        .detail-description{
+            padding: 0 25px;
+            
+        }
+
+
+    }
+}
+
+
+@media screen and (max-width:640px) {
+    
+    .detail-section{
+
+            .detail-image{
+                margin: 0;
+
+                .small-image{
+                    @include flex-1(row,flex-start);
+                    margin: 20px 25px;
+                    
+                    
+
+                    div{
+                        margin: 0;
+                        padding: 5px;
+                        margin-right: 10px;
+                        width: 80px;
+                    }
+
+                    
+                }
+
+                .big-image{
+                        height: 400px;
+                        margin: 0 40px 0 20px;
+                        width: 370px;
+
+                    img{
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            .detail-description{
+
+                a{
+                    padding: 20px 70px;
+                }
+            }
+        
+    }
+}

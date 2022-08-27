@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { div } from 'react';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
@@ -10,7 +10,7 @@ import { TbCornerUpLeftDouble } from 'react-icons/tb';
 function Footer(props) {
     return (
 
-        <Fragment>
+        <footer>
             <div className='footer-1'>
                 <div>
                     <div>
@@ -50,7 +50,7 @@ function Footer(props) {
                 
             </div>
 
-            <footer>
+            <div className='footer'>
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <h3>Produits</h3>
@@ -93,7 +93,7 @@ function Footer(props) {
                         </form>
                     </div>
                 </div>
-            </footer>
+            </div>
 
              <div className='footer-2'>
                 <div>
@@ -105,7 +105,8 @@ function Footer(props) {
                     <FaFacebookF/>
                 </div>
             </div>
-        </Fragment>
+            
+        </footer>
         
     );
 }

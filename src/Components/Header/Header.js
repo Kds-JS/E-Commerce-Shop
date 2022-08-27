@@ -1,10 +1,16 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import '../../SCSS/header.scss';
+  import { BsBag } from 'react-icons/bs';
+  import { HiMenuAlt3 } from 'react-icons/hi';
+  import { GrClose } from 'react-icons/gr';
 
-import { BsBag } from 'react-icons/bs';
-import { HiMenuAlt4 } from 'react-icons/hi';
 
-function Header(props) {
-    const [menuOpen, setMenuOpen] = useState(false);
+
+function Navbar() {
+
+  const [active, setActive] = useState("nav-mobile");
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -16,62 +22,113 @@ function Header(props) {
           })
     }, [menuOpen])
 
+  const navToggle = () => {
+    if (active === "nav-mobile") {
+      setActive("nav-mobile active");
+    } else setActive("nav-mobile");
+  };
 
+  return (
+    <header className={menuOpen && "menuActive"}>
+      
+    <nav className="nav">
+      <a href="#" className="nav-brand">
+        E-Shop
+      </a>
+      
+      <ul className="nav-menu">
+        
+        <li >
+          <a href="#" className="menu-link link-active">
+            Accueil
+          </a>
+        </li>
+        <li >
+          <a href="#" className="menu-link">
+            Boutique
+          </a>
+        </li>
+        <li >
+          <a href="#" className="menu-link">
+            Collection
+          </a>
+        </li>
+        <li >
+          <a href="#" className="menu-link">
+            Blog
+          </a>
+        </li>
 
-    return (
+        
+      </ul>
+      
 
-        <Fragment>
-        <div className='promo_section'>
-                LIVRAISON OFFERTE Dès 39£ d'achat
-            </div>
-        <header className={menuOpen && "menuActive"}>
-            
-            <nav class="navbar navbar-expand-lg ">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">E-shop</a>
-
-                    <div className='d-flex'>
-                        <div className='text-white icon d-lg-none d-flex me-3'>
-                            <BsBag/>
-                            <div className='cart'>
-                                5
-                            </div>
-                        </div>
-                        <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className='text-black  fs-1'><HiMenuAlt4/></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-column justify-content-start align-items-start flex-lg-row pt-4 pt-lg-0">
-                        <li class="nav-item">
-                        <a class="menu-link link-active" aria-current="page" href="#">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="menu-link" href="#">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="menu-link" href="#">Collections</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="menu-link" href="#">Blogs</a>
-                        </li>
-
-                        
-                    </ul>
-                    <div className='text-white icon d-lg-flex d-none me-2'>
-                        <BsBag/>
-                        <div className='cart'>
-                                5
-                        </div>
-                    </div>
-                    </div>
+      
+          <div className="icon-toggler d-lg-flex d-none">
+            <div className='icon  me-3 text-white '>
+                <BsBag/>
+                <div className='cart'>
+                    5
                 </div>
-            </nav>
-            
-        </header>
+            </div>
+          </div>
 
-        </Fragment>
-    );
+          <div className='d-lg-none d-flex align-items-center ' >
+              <div className='text-white icon me-3'>
+                  <BsBag/>
+                  <div className='cart'>
+                      5
+                  </div>
+              </div>
+              
+              <div onClick={navToggle} className="menu">
+                <span className='text-black  fs-1' >
+                  <HiMenuAlt3/>
+                </span>
+              </div>
+              
+              
+          </div>
+
+    </nav> 
+
+    <nav className={active}>
+          <ul className="nav_mobile_item">
+
+          <div onClick={navToggle} className="menu">
+                <span className='text-black  fs-1' >
+                  <GrClose/>
+                </span>
+              </div>
+        
+        <li >
+          <a href="#" className="menu-link link-active">
+            Accueil
+          </a>
+        </li>
+        <li >
+          <a href="#" className="menu-link">
+            Boutique
+          </a>
+        </li>
+        <li >
+          <a href="#" className="menu-link">
+            Collection
+          </a>
+        </li>
+        <li >
+          <a href="#" className="menu-link">
+            Blog
+          </a>
+        </li>
+
+        
+      </ul>
+
+    </nav>
+
+    </header>
+  );
 }
 
-export default Header;
+export default Navbar;

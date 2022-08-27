@@ -1,6 +1,5 @@
 // Librairies
 import React from 'react';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 import hero_1 from '../../../Images/hero-3.png';
 import hero_2 from '../../../Images/hero-4.png'
 
