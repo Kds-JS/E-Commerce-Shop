@@ -2,6 +2,7 @@ import React from 'react';
 import home1 from '../../../Images/home_2.jpg';
 import home2 from '../../../Images/home_3.jpg';
 import home3 from '../../../Images/home_1.jpg';
+import { Link } from 'react-router-dom';
 
 function Banner(props) {
     return (
@@ -13,7 +14,7 @@ function Banner(props) {
                         <div>
                             <h1>Hommes</h1>
                             <h6>A partir de 40$</h6>
-                            <a href="#" className='btn '>Achetez</a>
+                            <Link to="/shop" className='btn '>Achetez</Link>
                         </div>
                     </div>
                 </div>
@@ -25,7 +26,7 @@ function Banner(props) {
                         <div>
                             <h1>Hommes</h1>
                             <h6>A partir de 40$</h6>
-                            <a href="#" className='btn '>Achetez</a>
+                            <Link to="/shop" className='btn '>Achetez</Link>
                         </div>
                     </div>
                 </div>
@@ -37,7 +38,7 @@ function Banner(props) {
                         <div>
                             <h1>Hommes</h1>
                             <h6>A partir de 40$</h6>
-                            <a href="#" className='btn '>Achetez</a>
+                            <Link to="/shop" className='btn '>Achetez</Link>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../SCSS/latest.scss';
 
 function Latest(props) {
@@ -67,7 +68,7 @@ function Latest(props) {
 
 
             <div className='text-center' id='all_product'>
-                <a href="#" className='btn btn-primary'>Tous les produits</a>
+                <Link to="/shop" className='btn btn-primary'>Tous les produits</Link>
             </div>
         </div>
     );

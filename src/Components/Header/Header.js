@@ -3,12 +3,13 @@ import '../../SCSS/header.scss';
   import { BsBag } from 'react-icons/bs';
   import { HiMenuAlt3 } from 'react-icons/hi';
   import { GrClose } from 'react-icons/gr';
+import { Link, NavLink } from "react-router-dom";
 
 
 
 function Navbar() {
 
-  const [active, setActive] = useState("nav-mobile");
+  const [active, setActive] = useState(true);
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -23,30 +24,30 @@ function Navbar() {
     }, [menuOpen])
 
   const navToggle = () => {
-    if (active === "nav-mobile") {
-      setActive("nav-mobile active");
-    } else setActive("nav-mobile");
+    if (active) {
+      setActive(false);
+    } else setActive(true);
   };
 
   return (
     <header className={menuOpen && "menuActive"}>
       
     <nav className="nav">
-      <a href="#" className="nav-brand">
+      <Link to="/" className="nav-brand">
         E-Shop
-      </a>
+      </Link>
       
       <ul className="nav-menu">
         
         <li >
-          <a href="#" className="menu-link link-active">
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'menu-link active' : 'menu-link')}>
             Accueil
-          </a>
+          </NavLink>
         </li>
         <li >
-          <a href="#" className="menu-link">
+          <NavLink to="/shop"  className={({ isActive }) => (isActive ? 'menu-link active' : 'menu-link')}>
             Boutique
-          </a>
+          </NavLink>
         </li>
         <li >
           <a href="#" className="menu-link">
@@ -64,14 +65,16 @@ function Navbar() {
       
 
       
-          <div className="icon-toggler d-lg-flex d-none">
-            <div className='icon  me-3 text-white '>
-                <BsBag/>
-                <div className='cart'>
-                    5
-                </div>
+          <Link to="/cart" className="icon-toggler">
+            <div className=" d-lg-flex d-none">
+              <div className='icon  me-3 text-white '>
+                  <BsBag/>
+                  <div className='cart'>
+                      5
+                  </div>
+              </div>
             </div>
-          </div>
+          </Link>
 
           <div className='d-lg-none d-flex align-items-center ' >
               <div className='text-white icon me-3'>
@@ -92,38 +95,38 @@ function Navbar() {
 
     </nav> 
 
-    <nav className={active}>
+    <nav className={active ? "nav-mobile" : "nav-mobile active"}>
           <ul className="nav_mobile_item">
 
-          <div onClick={navToggle} className="menu">
+              <div onClick={navToggle} className="menu">
                 <span className='text-black  fs-1' >
                   <GrClose/>
                 </span>
               </div>
         
-        <li >
-          <a href="#" className="menu-link link-active">
-            Accueil
-          </a>
-        </li>
-        <li >
-          <a href="#" className="menu-link">
-            Boutique
-          </a>
-        </li>
-        <li >
-          <a href="#" className="menu-link">
-            Collection
-          </a>
-        </li>
-        <li >
-          <a href="#" className="menu-link">
-            Blog
-          </a>
-        </li>
+              <li onClick={navToggle}>
+                <NavLink to="/" className={({ isActive }) => (isActive ? 'menu-link active' : 'menu-link')}>
+                  Accueil
+                </NavLink>
+              </li>
+              <li onClick={navToggle}>
+                <NavLink to="/shop"  className={({ isActive }) => (isActive ? 'menu-link active' : 'menu-link')}>
+                  Boutique
+                </NavLink>
+              </li>
+              <li >
+                <a href="#" className="menu-link">
+                  Collection
+                </a>
+              </li>
+              <li >
+                <a href="#" className="menu-link">
+                  Blog
+                </a>
+              </li>
 
         
-      </ul>
+          </ul>
 
     </nav>
 

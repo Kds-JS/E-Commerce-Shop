@@ -1,0 +1,7 @@
+@import './globals..scss';
+
+.ErrorPage{
+    height: 60vh;
+    @include flex-1(column,center);
+    padding: 0 5%;
+}

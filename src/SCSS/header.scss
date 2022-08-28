@@ -47,6 +47,11 @@ header{
 .nav-brand{
   font-weight: bold;
   font-size: 2rem;
+  font-family: "";
+
+  &:hover{
+    color: black;
+  }
 }
 
 .menu-link{
@@ -58,7 +63,7 @@ header{
     color: black;
   }
 
-  &.link-active{
+  &.active{
     color: $color-blue;
     font-weight: bold;
   }

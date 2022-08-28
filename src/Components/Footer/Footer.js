@@ -81,7 +81,7 @@ function Footer(props) {
                     </div>
                 
                 
-                    <div class="col-lg-3 col-md-6">
+                    <div className="col-lg-3 col-md-6">
                         <h3>NEWSLETTER</h3>
                         <form>
                         <div>

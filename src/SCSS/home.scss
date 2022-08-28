@@ -44,10 +44,10 @@
                 
 
                 h1{
-                    font-size: 3.5rem;
+                    font-size: 3rem;
                     font-weight: bold;
                     text-transform: uppercase;
-                    font-style: italic;
+                    // font-style: italic;
                     padding: 0;
                     margin: 0;
                 }
@@ -167,6 +167,14 @@
             
 
             .hero-element{
+
+                .hero-image{
+                    height: 350px;
+
+                    img{
+                        object-fit: contain;
+                    }
+                }
 
 
                 .hero-description{

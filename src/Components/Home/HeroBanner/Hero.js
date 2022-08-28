@@ -5,6 +5,7 @@ import hero_2 from '../../../Images/hero-4.png'
 
 import { FaChevronCircleLeft } from 'react-icons/fa';
 import { FaChevronCircleRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 function Hero(props) {
@@ -33,7 +34,7 @@ function Hero(props) {
                                     <p className='d-md-flex d-none'>Ne manquez pas certains articles très spéciaux à des prix de vente extraordinaires. Pour un temps limité!</p>
                                     
 
-                                    <a href='#' className='btn btn-outline-primary '>En savoir plus</a>
+                                    <Link to="/shop" className='btn btn-outline-primary '>En savoir plus</Link>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +51,7 @@ function Hero(props) {
                                         <p className='d-md-flex d-none'>Ne manquez pas certains articles très spéciaux à des prix de vente extraordinaires. Pour un temps limité!</p>
                                         
 
-                                        <a href='#' className='btn btn-outline-primary'>En savoir plus</a>
+                                        <Link to="/shop" className='btn btn-outline-primary'>En savoir plus</Link>
 
                                     </div>
                             </div>
