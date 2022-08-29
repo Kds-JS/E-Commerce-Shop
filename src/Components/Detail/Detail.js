@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../../SCSS/detail.scss';
-import parka from '../../../src/Images/parka.png';
-import parka2 from '../../../src/Images/parka-1.png';
 import Latest from '../Latest/Latest';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {useAppContext} from '../../App/AppContext';
 
 
-function Detail(props) {
+function Detail() {
     const [imageArray, setImageArray] = useState([]);
     const [imageIndex, setImageIndex]  = useState(0);
 
@@ -15,7 +13,6 @@ function Detail(props) {
     const [product, setProduct] = useState({});
 
     const {cart, setCart} = useAppContext();
-    // const [isAlreadyInCart, setIsAlreadyInCart] = useState(true);
     
 
     useEffect(() => {
@@ -24,83 +21,39 @@ function Detail(props) {
             return response.json();
         })
         .then((data) => {
-          console.log(data);
+        //   console.log(data);
           setProduct(data);
           setImageArray(data.image);
         })
         .catch((error) => {
           console.log(error.message);
         })
-    }, [])
+    }, [id])
 
-
-    // const addToCart = () => {
-    //     // let isAlreadyInCart = true
-    //     console.log(product.id);
-        
-    //         if (cart.length == 0) {
-    //             // isAlreadyInCart = false;
-    //             // setIsAlreadyInCart(false);
-    //             setCart([...cart, product])
-    //         } else {
-                
-    //             for (let i= 0; i< cart.length; i++) {
-    //                 if (product.id != cart[i].id) {
-    //                     // isAlreadyInCart = false;
-    //                     // setIsAlreadyInCart(false);
-    //                     console.log(cart[i].id);
-    //                     setCart([...cart, product])
-    //                 }
-    //             }
-    //         }
-        
-        
-    //     // !isAlreadyInCart && setCart([...cart, product]);
-    // }
+   
 
     const addToCart = () => {
-        // setIsAlreadyInCart(true);
 
-        let isAlreadyInCart = true;
-        console.log(isAlreadyInCart);
-        setCart( () => {
-
-            if (cart.length == 0) {
-                isAlreadyInCart = false;
-                // setIsAlreadyInCart(false);
-                // setCart([...cart, product])
-            } else {
+        setCart(cart=>{
+            
+            let isAlreadyInCart = false;
+            for (let i = 0; i < cart.length; i++) {
                 
-                for (let i= 0; i< cart.length; i++) {
-                    let add = product == cart[i];
-                    console.log(cart[i]);
-                    console.log(product);
-                    if (add) {
-                        isAlreadyInCart = true;
-                        // setIsAlreadyInCart(false);
-                        // console.log(cart[i].id);
-                        // setCart([...cart, product])
-                    } else {
-                        isAlreadyInCart = false;
-                    }
+                if (cart[i].id == product.id) {
+                    isAlreadyInCart = true;
                 }
             }
 
-
-            console.log(isAlreadyInCart);
-            if (isAlreadyInCart) {
-                return cart;
-            } else {
-                return [
-                    product,
-                    ...cart
-                ]
-            }
-        })
+            if (isAlreadyInCart) return cart;
+            else return [
+                        product,
+                        ...cart
+                        ];
+        });
     }
 
-    console.log(cart);
-    // console.log(isAlreadyInCart);
+    // console.log(cart);
+
 
 
 
@@ -148,7 +101,7 @@ function Detail(props) {
 
                         <p className='mb-3'>{product.price} $</p>
 
-                        <a href="#" onClick={addToCart}>AJOUTEZ AU PANIER</a>
+                        <Link to="/cart" onClick={addToCart}>AJOUTEZ AU PANIER</Link>
                         
                     </div>
 

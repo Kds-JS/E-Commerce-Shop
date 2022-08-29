@@ -4,6 +4,7 @@ import '../../SCSS/header.scss';
   import { HiMenuAlt3 } from 'react-icons/hi';
   import { GrClose } from 'react-icons/gr';
 import { Link, NavLink } from "react-router-dom";
+import {useAppContext} from '../../App/AppContext';
 
 
 
@@ -12,6 +13,8 @@ function Navbar() {
   const [active, setActive] = useState(true);
 
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const {cart, setCart} = useAppContext();
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -69,9 +72,11 @@ function Navbar() {
             <div className=" d-lg-flex d-none">
               <div className='icon  me-3 text-white '>
                   <BsBag/>
-                  <div className='cart'>
-                      5
-                  </div>
+                  {
+                    cart !=0 && <div className='cart'>
+                      {cart.length}
+                    </div>
+                  }
               </div>
             </div>
           </Link>
@@ -79,9 +84,11 @@ function Navbar() {
           <div className='d-lg-none d-flex align-items-center ' >
               <div className='text-white icon me-3'>
                   <BsBag/>
-                  <div className='cart'>
-                      5
-                  </div>
+                  {
+                    cart.length !=0 && <div className='cart'>
+                      {cart.length}
+                    </div>
+                  }
               </div>
               
               <div onClick={navToggle} className="menu">

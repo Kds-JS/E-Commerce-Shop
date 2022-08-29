@@ -42,7 +42,7 @@
             height: 100%;
 
             .cart-image{
-                background: #EDEDED;
+                // background: #EDEDED;
                 width: 30%;
                 flex-shrink: 0;
                 margin-right: 25px;
@@ -72,18 +72,15 @@
                     font-size: 2rem;
 
                     .btn{
-                        border: 3px solid $color-blue;
+                        border: 3px solid silver;
                         padding-top: 0;
                         padding-bottom: 0;
                         font-size: 1.5rem;
-
-                        &:nth-child(1){
-                            border: 3px solid silver;
+                        
+                        &#active{
+                            border: 3px solid $color-blue;
                         }
-                        
-                        
-                            
-                        
+    
                     }
                 }
     
@@ -93,6 +90,7 @@
     
                 .delete-btn{
                     font-size: 1.5rem;
+                    cursor: pointer;
                 }
         }
 

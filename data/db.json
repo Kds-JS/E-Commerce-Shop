@@ -3,6 +3,7 @@
 
     {
       "id": 1,
+      "quantity": 1,
       "name": "Sweat à capuche coupe régulière",
       "categorie": "homme",
       "price": 35,
@@ -17,6 +18,7 @@
 
     {
         "id": 2,
+        "quantity": 1,
         "name": "Sweat col rond tricolore en molleton",
         "categorie": "enfant",
         "price": 40,
@@ -30,6 +32,7 @@
 
       {
         "id": 3,
+        "quantity": 1,
         "name": "Jogging Top",
         "categorie": "homme",
         "price": 15,
@@ -42,6 +45,7 @@
 
       {
         "id": 4,
+        "quantity": 1,
         "name": "Parka Jacket",
         "categorie": "femme",
         "price": 85,
@@ -55,6 +59,7 @@
 
       {
         "id": 5,
+        "quantity": 1,
         "name": "Gilet boutonnée en maille ajourée",
         "categorie": "enfant",
         "price": 38,

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import '../../SCSS/cart.scss';
 import { GrClose } from 'react-icons/gr';
 import Stepper from 'react-stepper-horizontal';
@@ -7,7 +7,59 @@ import {useAppContext} from '../../App/AppContext';
 
 function Cart(props) {
     const [CartOpen,setCartOpen] = useState(false);
-    const [cart, setCart] = useAppContext();
+    const {cart, setCart} = useAppContext();
+    const [total,setTotal] = useState(0);
+    
+
+    useEffect(() => {
+        let newTotal = 0;
+        cart.forEach(item => {
+            newTotal += item.price * item.quantity;
+          });
+
+          setTotal(newTotal);
+    },[cart])
+
+    useEffect(() => {
+        if (cart.length != 0) {
+            setCartOpen(true);
+        } else {
+            setCartOpen(false);
+        }
+    }, [cart]);
+
+    const deleteFromCart = (id) => {
+        const newCart = cart.filter((item) => item.id !=   id);
+        setCart(newCart);
+    }
+
+    const addQuantity = (itemId,itemQuantity) => {
+        
+        setCart (cart => {
+            return cart.map(item => {
+                if (item.id == itemId & itemQuantity != 10){
+                    return {
+                        ...item,
+                        quantity: itemQuantity + 1
+                    }
+                } else return item;
+            })
+        })
+    }
+
+    const reduceQuantity = (itemId,itemQuantity) => {
+        
+        setCart (cart => {
+            return cart.map(item => {
+                if (item.id == itemId & itemQuantity != 1){
+                    return {
+                        ...item,
+                        quantity: itemQuantity - 1
+                    }
+                } else return item;
+            })
+        })
+    }
     
 
     return (
@@ -37,109 +89,50 @@ function Cart(props) {
             { CartOpen ? 
             (
             <Fragment>
-                <div className='cart row'>
-                    <div className='cart-item1 d-flex col-lg-6 col-md-7'>
+                {
+                    cart.map( item => {
+                        return (
+                            <div className='cart row' key={item.id}>
+                                <div className='cart-item1 d-flex col-lg-6 col-md-7'>
 
-                        <div className='cart-image'>
-                            <img src="https://cdn.jevelin.shufflehound.com/wp-content/uploads/sites/27/2018/03/5559315711_2_5_1-1024x1308.jpg" alt="image" width="50px"/>
-                        </div>
+                                    <div className='cart-image'>
+                                        <img src={item.image[0]} alt="image" width="50px"/>
+                                    </div>
 
-                        <div className='cart-description'>
-                            <h2>Tshirt gris Adidas</h2>
-                            <span>Color</span>
-                        </div>
+                                    <div className='cart-description'>
+                                        <h2>{item.name}</h2>
+                                        <span>Color</span>
+                                    </div>
 
-                    </div>
+                                </div>
                     
-                    <div className='cart-item2 col-lg-6 col-md-5 d-flex'>
-                        <div className="cart-btn d-flex">
-                            <div className='btn'>-</div>
-                            <div>1</div>
-                            <div className='btn'>+</div>
-                        </div>
+                                <div className='cart-item2 col-lg-6 col-md-5 d-flex'>
+                                    <div className="cart-btn d-flex">
+                                        <button className='btn' id={item.quantity != 1 && "active"} onClick={() => reduceQuantity(item.id,item.quantity)}>-</button>
+                                        <div>{item.quantity}</div>
+                                        <div className='btn' id={item.quantity != 10 && "active"} onClick={() => addQuantity(item.id,item.quantity)}>+</div>
+                                    </div>
 
-                        <div className='cart-price'>
-                            <strong>980$</strong>
-                        </div>
+                                    <div className='cart-price'>
+                                        <strong>{item.price} $</strong>
+                                    </div>
 
-                        <div className='delete-btn'>
-                            <span><GrClose /></span>
-                        </div>
+                                    <div className='delete-btn' onClick={() => deleteFromCart(item.id)}>
+                                        <span><GrClose /></span>
+                                    </div>
 
-                    </div>
+                                </div>
 
-                </div>
-
-                <div className='cart row'>
-                    <div className='cart-item1 d-flex col-lg-6 col-md-7'>
-
-                        <div className='cart-image'>
-                            <img src="https://cdn.jevelin.shufflehound.com/wp-content/uploads/sites/27/2018/03/5559315711_2_5_1-1024x1308.jpg" alt="image" width="50px"/>
-                        </div>
-
-                        <div className='cart-description'>
-                            <h2>Tshirt gris Adidas</h2>
-                            <span>Color</span>
-                        </div>
-
-                    </div>
-                    
-                    <div className='cart-item2 col-lg-6 col-md-5 d-flex'>
-                        <div className="cart-btn d-flex">
-                            <div className='btn'>-</div>
-                            <div>1</div>
-                            <div className='btn'>+</div>
-                        </div>
-
-                        <div className='cart-price'>
-                            <strong>980$</strong>
-                        </div>
-
-                        <div className='delete-btn'>
-                            <span><GrClose /></span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className='cart row'>
-                    <div className='cart-item1 d-flex col-lg-6 col-md-7'>
-
-                        <div className='cart-image'>
-                            <img src="https://cdn.jevelin.shufflehound.com/wp-content/uploads/sites/27/2018/03/5559315711_2_5_1-1024x1308.jpg" alt="image" width="50px"/>
-                        </div>
-
-                        <div className='cart-description'>
-                            <h2>Tshirt gris Adidas</h2>
-                            <span>Color</span>
-                        </div>
-
-                    </div>
-                    
-                    <div className='cart-item2 col-lg-6 col-md-5 d-flex'>
-                        <div className="cart-btn d-flex">
-                            <div className='btn'>-</div>
-                            <div>1</div>
-                            <div className='btn'>+</div>
-                        </div>
-
-                        <div className='cart-price'>
-                            <strong>980$</strong>
-                        </div>
-
-                        <div className='delete-btn'>
-                            <span><GrClose /></span>
-                        </div>
-
-                    </div>
-
-                </div>
+                            </div>
+                        )
+                    })
+                }
+                
 
                 <div className='cart-checkout'>
-                        <div>Total: <strong>2 777$</strong></div>
-                        <a href='#' className='btn btn-primary'>Achetez</a>
-                </div>
+                        <div>Total: <strong>{total} $</strong></div>
+                        <Link to='/' className='btn btn-primary'>Achetez</Link>
+                </div> 
             </Fragment>
 
             )
