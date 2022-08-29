@@ -12,21 +12,24 @@ import Detail from '../Components/Detail/Detail';
 import Cart from '../Components/Cart/Cart';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import ScrollToTop from './ScrollToTop';
+import GlobalContext from './AppContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop/>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/shop" element={<Market />}/>
-        <Route path="/detail" element={<Detail />}/>
-        <Route path="/cart" element={<Cart />}/>
-        <Route path="*" element={<ErrorPage/>}/>
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
+    <GlobalContext>
+      <BrowserRouter>
+        <ScrollToTop/>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/shop" element={<Market />}/>
+          <Route path="/detail/:id" element={<Detail />}/>
+          <Route path="/cart" element={<Cart />}/>
+          <Route path="*" element={<ErrorPage/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+    </GlobalContext>
   );
 }
 

@@ -3,11 +3,106 @@ import '../../SCSS/detail.scss';
 import parka from '../../../src/Images/parka.png';
 import parka2 from '../../../src/Images/parka-1.png';
 import Latest from '../Latest/Latest';
+import { useParams } from 'react-router-dom';
+import {useAppContext} from '../../App/AppContext';
 
 
 function Detail(props) {
-    const imageArray = [parka,parka2,'https://assets.website-files.com/5c78e314be5f9fc4990593b3/5e2edabd3efbdb42a475fae5_wrapped-in-my-favourite-sweater-p-800.jpeg','https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2017/12/parka_jacket_01-990x990.jpg'];
+    const [imageArray, setImageArray] = useState([]);
     const [imageIndex, setImageIndex]  = useState(0);
+
+    const {id}  = useParams();
+    const [product, setProduct] = useState({});
+
+    const {cart, setCart} = useAppContext();
+    // const [isAlreadyInCart, setIsAlreadyInCart] = useState(true);
+    
+
+    useEffect(() => {
+      fetch(`http://localhost:8000/products/${id}`)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setProduct(data);
+          setImageArray(data.image);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        })
+    }, [])
+
+
+    // const addToCart = () => {
+    //     // let isAlreadyInCart = true
+    //     console.log(product.id);
+        
+    //         if (cart.length == 0) {
+    //             // isAlreadyInCart = false;
+    //             // setIsAlreadyInCart(false);
+    //             setCart([...cart, product])
+    //         } else {
+                
+    //             for (let i= 0; i< cart.length; i++) {
+    //                 if (product.id != cart[i].id) {
+    //                     // isAlreadyInCart = false;
+    //                     // setIsAlreadyInCart(false);
+    //                     console.log(cart[i].id);
+    //                     setCart([...cart, product])
+    //                 }
+    //             }
+    //         }
+        
+        
+    //     // !isAlreadyInCart && setCart([...cart, product]);
+    // }
+
+    const addToCart = () => {
+        // setIsAlreadyInCart(true);
+
+        let isAlreadyInCart = true;
+        console.log(isAlreadyInCart);
+        setCart( () => {
+
+            if (cart.length == 0) {
+                isAlreadyInCart = false;
+                // setIsAlreadyInCart(false);
+                // setCart([...cart, product])
+            } else {
+                
+                for (let i= 0; i< cart.length; i++) {
+                    let add = product == cart[i];
+                    console.log(cart[i]);
+                    console.log(product);
+                    if (add) {
+                        isAlreadyInCart = true;
+                        // setIsAlreadyInCart(false);
+                        // console.log(cart[i].id);
+                        // setCart([...cart, product])
+                    } else {
+                        isAlreadyInCart = false;
+                    }
+                }
+            }
+
+
+            console.log(isAlreadyInCart);
+            if (isAlreadyInCart) {
+                return cart;
+            } else {
+                return [
+                    product,
+                    ...cart
+                ]
+            }
+        })
+    }
+
+    console.log(cart);
+    // console.log(isAlreadyInCart);
+
+
 
     const changeImage = (index) => {
         setImageIndex(index);
@@ -48,12 +143,13 @@ function Detail(props) {
 
                 <div className="col-lg-5">
                     <div className='detail-description'>
-                        <h1>Iphone 12 Grey Deep 2021</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laborum sed perferendis iste voluptatum veniam, possimus tempore repellat ullam deleniti nulla hic adipisci incidunt excepturi expedita pariatur, nam aspernatur totam!</p>
+                        <h1>{product.name}</h1>
+                        <p>{product.description}</p>
 
-                        <p className='mb-3'>40$</p>
+                        <p className='mb-3'>{product.price} $</p>
 
-                        <a href="#">AJOUTEZ AU PANIER</a>
+                        <a href="#" onClick={addToCart}>AJOUTEZ AU PANIER</a>
+                        
                     </div>
 
                     

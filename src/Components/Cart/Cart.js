@@ -3,9 +3,12 @@ import '../../SCSS/cart.scss';
 import { GrClose } from 'react-icons/gr';
 import Stepper from 'react-stepper-horizontal';
 import { Link} from "react-router-dom";
+import {useAppContext} from '../../App/AppContext';
 
 function Cart(props) {
     const [CartOpen,setCartOpen] = useState(false);
+    const [cart, setCart] = useAppContext();
+    
 
     return (
         <div className='cart-section'>

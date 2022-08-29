@@ -57,17 +57,13 @@
     .product{
 
         .product-image{
-            background: #EDEDED;
+            // background: #EDEDED;
             height: 400px;
 
             img{
                 height: 100%;
                 width: 100%;
-                object-fit: contain;
-
-                &:hover{
-                    object-fit: cover;
-                }
+                object-fit: cover;
             }
         }
 
@@ -156,6 +152,7 @@
                 li{
                     display: inline-block;
                     margin-right: 25px;
+                    
                     
                     &#list-one{
                         display: block;

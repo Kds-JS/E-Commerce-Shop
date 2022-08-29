@@ -1,0 +1,63 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Sweat à capuche coupe régulière",
+      "categorie": "homme",
+      "price": 35,
+      "description": "Fabriqué à la main avec un style saisonnier à l'esprit, il est idéal pour une tenue formelle ou décontractée quelle que soit l'occasion et est un incontournable idéal pour toute garde-robe.",
+      "image": [
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2022/01/hoodie_regular_fit_01-990x990.jpg",
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2018/05/hoodie_02.jpg",
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2018/05/hoodie_03.jpg",
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2018/05/hoodie_04.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sweat col rond tricolore en molleton",
+      "categorie": "enfant",
+      "price": 40,
+      "description": "Fabriqué à la main avec un style saisonnier à l'esprit, il est idéal pour une tenue formelle ou décontractée quelle que soit l'occasion et est un incontournable idéal pour toute garde-robe.",
+      "image": [
+        "https://cdn.laredoute.com/products/a/e/b/aebfcd00540283754ae4ba88c8bfa8d2.jpg?imgopt=twic&twic=v1/cover=640x640",
+        "https://cdn.laredoute.com/products/3/c/b/3cba3a5d29baf47261b42f4018f6ea26.jpg?imgopt=twic&twic=v1/cover=800x800",
+        "https://cdn.laredoute.com/products/9/e/4/9e47dd4f20ae521cff274ab7f0d1caa3.jpg?imgopt=twic&twic=v1/cover=800x800"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Jogging Top",
+      "categorie": "homme",
+      "price": 15,
+      "description": "Fabriqué à la main avec un style saisonnier à l'esprit, il est idéal pour une tenue formelle ou décontractée quelle que soit l'occasion et est un incontournable idéal pour toute garde-robe.",
+      "image": [
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2018/05/jogging_top_01-990x990.jpg",
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2018/05/jogging_top_02.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Parka Jacket",
+      "categorie": "femme",
+      "price": 85,
+      "description": "Fabriqué à la main avec un style saisonnier à l'esprit, il est idéal pour une tenue formelle ou décontractée quelle que soit l'occasion et est un incontournable idéal pour toute garde-robe.",
+      "image": [
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2017/12/parka_jacket_01-990x990.jpg",
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2018/05/parka_outdoors_03.jpg",
+        "https://shoptimizerdemo.commercegurus.com/wp-content/uploads/2018/05/parka_outdoors_02-768x768.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Gilet boutonnée en maille ajourée",
+      "categorie": "enfant",
+      "price": 38,
+      "description": "Fabriqué à la main avec un style saisonnier à l'esprit, il est idéal pour une tenue formelle ou décontractée quelle que soit l'occasion et est un incontournable idéal pour toute garde-robe.",
+      "image": [
+        "https://cdn.laredoute.com/products/0/c/2/0c275f5b5e09e9ce6fe2396dcedacc2b.jpg?imgopt=twic&twic=v1/cover=640x640",
+        "https://cdn.laredoute.com/products/9/4/c/94cca146817cbe9a8b61a455dc469a0d.jpg?imgopt=twic&twic=v1/cover=650x650"
+      ]
+    }
+  ]
+}
