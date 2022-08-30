@@ -4,7 +4,7 @@ import { Link} from "react-router-dom";
 
 function Market(props) {
     const [data, setData] = useState([]);
-    const [categorie, setCategorie] = useState('');
+    const [category, setCategory] = useState('');
     const [filter,setFilter] = useState(false);
 
     const [allProduct, setAllProduct] = useState([]);
@@ -14,7 +14,7 @@ function Market(props) {
     
 
     useEffect(() => {
-      fetch(`http://localhost:8000/products${filter ? `?categorie=${categorie}` : ''}`)
+      fetch(`http://localhost:8000/products${filter ? `?category=${category}` : ''}`)
         .then((response) => {
             return response.json();
         })
@@ -25,7 +25,7 @@ function Market(props) {
         .catch((error) => {
           console.log(error.message);
         })
-    }, [categorie,filter])
+    }, [category,filter])
 
     useEffect(() => {
         fetch(`http://localhost:8000/products`)
@@ -34,9 +34,9 @@ function Market(props) {
           })
           .then((data) => {
             console.log(data);
-            const manArray = data.filter((product) => product.categorie == "homme");
-            const womanArray = data.filter((product) => product.categorie == "femme");
-            const childrenArray = data.filter((product) => product.categorie == "enfant");
+            const manArray = data.filter((product) => product.category == "homme");
+            const womanArray = data.filter((product) => product.category == "femme");
+            const childrenArray = data.filter((product) => product.category == "enfant");
             setAllProduct(data);
             setMan(manArray);
             setWoman(womanArray);
@@ -51,22 +51,22 @@ function Market(props) {
 
 
     const showAll = () => {
-        setCategorie('');
+        setCategory('');
         setFilter(false);
     }
 
     const filteredMan = () => {
-        setCategorie('homme');
+        setCategory('homme');
         setFilter(true);
     }
 
     const filteredWoman = () => {
-        setCategorie('femme');
+        setCategory('femme');
         setFilter(true);
     }
 
     const filteredChildren = () => {
-        setCategorie('enfant');
+        setCategory('enfant');
         setFilter(true);
     }
 
@@ -105,13 +105,13 @@ function Market(props) {
                     <div className="col-lg-3">
                         <div className='category'>
                             <div>
-                                <h1>Categories</h1>
+                                <h1>Categorys</h1>
                             </div>
                             <ul>
-                                <li id="list-one" onClick={showAll}>Tous <span>+{allProduct.length}</span></li>
-                                <li onClick={filteredMan}>Hommes <span>+{man.length}</span></li>
-                                <li onClick={filteredWoman}>Femmes <span>+{woman.length}</span></li>
-                                <li onClick={filteredChildren}>Enfants <span>+{children.length}</span></li>
+                                <li id="list-one" onClick={showAll} className={category == '' && 'active'}>Tous <span>+{allProduct.length}</span></li>
+                                <li onClick={filteredMan} className={category == 'homme' && 'active'}>Hommes <span>+{man.length}</span></li>
+                                <li onClick={filteredWoman} className={category == 'femme' && 'active'}>Femmes <span>+{woman.length}</span></li>
+                                <li onClick={filteredChildren} className={category == 'enfant' && 'active'}>Enfants <span>+{children.length}</span></li>
                             </ul>
                         </div>
                     </div>

@@ -28,6 +28,8 @@ function Detail() {
         .catch((error) => {
           console.log(error.message);
         })
+
+        setImageIndex(0);
     }, [id])
 
    

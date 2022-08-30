@@ -101,7 +101,7 @@ function Cart(props) {
 
                                     <div className='cart-description'>
                                         <h2>{item.name}</h2>
-                                        <span>Color</span>
+                                        <span style={{textTransform: 'uppercase'}}>{item.category}</span>
                                     </div>
 
                                 </div>

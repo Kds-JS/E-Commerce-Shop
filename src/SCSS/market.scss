@@ -38,13 +38,21 @@
                 cursor: pointer;
 
                 &:hover{
-                    color: $color-blue;
+                    color: blue;
+                }
+
+                &.active{
+                    color: blue;
+
+                    span{
+                        background: blue;
+                    }
                 }
 
                 span{
                     height: 30px;
                     width: 50px;
-                    border-radius: 45%;
+                    border-radius: 48%;
                     @include flex-1(row, center);
                     color: white;
                     background: $color-blue-100;
