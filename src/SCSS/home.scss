@@ -29,12 +29,29 @@
 
             .hero-image{
                 height: 500px;
-                
-                img{
-                    height: 100%;
-                    width: 100%;
-                    object-fit: contain;
+                position: relative;
+
+
+                #circle{
+                    height: 440px;
+                    width: 440px;
+                    border-radius: 50%;
+                    background: white;
+                    position: absolute;
+                    bottom: -50px;
+                    right: 50px;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        position: relative;
+                        top: -50px;
+                        right: 40px;
+                    }
                 }
+                
+                
             }
 
             .hero-description{
@@ -135,14 +152,19 @@
             }
 
             .hero-image{
-                height: 700px;
-                padding-bottom: 15px;
-                padding: 0 20px 15px 20px;
-               
+                height: 420px;
                 
-                img{
-                    object-fit: cover;
+                #circle{
+                    right: 10px;
+                    height: 400px;
+                    width: 370px;
+
+                    img{
+                        right: 10px;
+                        object-fit: contain;
+                    }
                 }
+                
             }
 
             .hero-description{
@@ -169,19 +191,22 @@
             .hero-element{
 
                 .hero-image{
-                    height: 350px;
+                    height: 330px;
+                    
 
-                    img{
-                        object-fit: contain;
+                    #circle{
+                        height: 300px;
+                        width: 300px;
+                        right: 50px;
                     }
                 }
 
 
                 .hero-description{
                     align-items: center;
-                    height: 200px;
-                    padding-bottom: 50px;
-                    padding-right: 0;
+                   
+                    padding-top: 50px;
+                    
 
                     h1{
                         font-size: 1.5rem;

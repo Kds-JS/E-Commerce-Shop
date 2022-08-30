@@ -11,7 +11,6 @@
 }
 
 .market-section{
-    overflow-x: hidden;
     width: 100%;
     margin-top: 70px;
     padding-bottom: 50px;
@@ -19,6 +18,8 @@
     .category{
         background: $color-light-100;
         padding-bottom: 25px;
+        position: sticky!important;
+        top: 110px;
 
         div{
             padding: 10px 0;
@@ -29,6 +30,8 @@
         ul{
             padding: 0;
             margin: 20px 25px;
+            
+
 
             li{
                 padding: 0;
@@ -106,6 +109,7 @@
     }
     
     .market-section{
+        overflow-x: hidden;
 
         .category{
             padding-bottom: 25px;
