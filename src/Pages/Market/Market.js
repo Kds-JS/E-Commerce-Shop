@@ -28,11 +28,6 @@ function Market(props) {
     const manArray = data.filter((product) => product.category == "homme");
     const womanArray = data.filter((product) => product.category == "femme");
     const childrenArray = data.filter((product) => product.category == "enfant");
-    
-    // const checkMan = JSON.stringify(manArray)==JSON.stringify(products);
-    // const checkWoman = JSON.stringify(womanArray)==JSON.stringify(products);
-    // const checkChildren = JSON.stringify(childrenArray)==JSON.stringify(products);
-    // const checkAll = JSON.stringify(data) == JSON.stringify(products);
 
     const [checkMan,setCheckMan] = useState(false);
     const [checkWoman,setCheckWoman] = useState(false);

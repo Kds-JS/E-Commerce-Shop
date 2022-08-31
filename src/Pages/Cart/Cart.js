@@ -4,7 +4,7 @@ import Stepper from 'react-stepper-horizontal';
 import { Link} from "react-router-dom";
 import {useAppContext} from '../../App/AppContext';
 
-function Cart(props) {
+function Cart() {
     const [CartOpen,setCartOpen] = useState(false);
     const {cart, setCart} = useAppContext();
     const [total,setTotal] = useState(0);
