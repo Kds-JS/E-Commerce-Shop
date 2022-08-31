@@ -10,7 +10,7 @@
  - React
  - SCSS
  - Bootstrap 5
- - GitHub Pages ( Hébergement d'une API JSON )
+ - GitHub Pages ( Hébergement de la data JSON )
  - API Context de React pour la gestion des states
 
 ### Installation
