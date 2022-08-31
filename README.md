@@ -1,6 +1,6 @@
 # E-Commerce-Shop
 
-[![E-shop App](./src/images/home.png)](https://twitter.com/kds_JS)
+[![E-shop App](./src/Images/home.png)](https://twitter.com/kds_JS)
 
 ### C'est une petite application e-commerce avec un système d'ajout au panier
 
