@@ -26,6 +26,10 @@
         img{
             height: 80%;
         }
+
+        a{
+            font-weight: bold;
+        }
     }
 
     .cart{
@@ -41,7 +45,6 @@
             height: 100%;
 
             .cart-image{
-                // background: #EDEDED;
                 width: 30%;
                 flex-shrink: 0;
                 margin-right: 25px;
@@ -106,6 +109,7 @@
             margin-top: 15px;
             padding: 15px 0;
             width: 30%;
+            font-weight: bold;
         }
     }
 }
