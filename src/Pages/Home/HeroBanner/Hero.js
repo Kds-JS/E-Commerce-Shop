@@ -1,14 +1,21 @@
 // Librairies
-import React from 'react';
-import hero_1 from '../../../Images/hero-3.png';
-import hero_2 from '../../../Images/hero-4.png'
+import React, { useEffect, useState } from 'react';
 
-import { FaChevronCircleLeft } from 'react-icons/fa';
-import { FaChevronCircleRight } from 'react-icons/fa';
+import hero_2 from '../../../Images/hero-4.png'
 import { Link } from 'react-router-dom';
 
 
 function Hero(props) {
+    const [display,setDisplay] = useState(false);
+
+    useEffect(() => {
+
+        setTimeout(() => {
+            setDisplay(true);
+        },1000)
+    },[])
+
+
     return (
         <div className='hero-section'>
             <div className='hero'>
@@ -16,7 +23,7 @@ function Hero(props) {
                             <div className='row hero-element'>
                                 <div className='col-md-6 hero-image order-md-1 order-2'>
                                     
-                                    <div id='circle'>
+                                    <div id='circle' className={display && 'active'}>
                                         <img src={hero_2} alt="" />
                                     </div>
                                 </div>

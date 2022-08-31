@@ -40,16 +40,8 @@
                 margin-top: 20px;
                 cursor: pointer;
 
-                &:hover{
-                    color: blue;
-                }
-
-                &.active{
-                    color: blue;
-
-                    span{
-                        background: blue;
-                    }
+                p{
+                    margin: 0;
                 }
 
                 span{
@@ -59,6 +51,10 @@
                     @include flex-1(row, center);
                     color: white;
                     background: $color-blue-100;
+
+                    &.active{
+                        background: blue;
+                    }
                 }
             }
         }

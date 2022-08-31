@@ -29,7 +29,6 @@
     }
 
     .cart{
-        border-bottom: 1px solid silver;
         margin: 0;
         height: 200px;
         padding: 15px 0;
@@ -168,6 +167,10 @@
             @include flex-1(row,space-between);
             height: auto;
             padding: 0 25px;
+
+            .cart-btn{
+                flex-grow: 0.3;
+            }
         }
 
         .cart-checkout{

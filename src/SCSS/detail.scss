@@ -113,6 +113,7 @@
 @media screen and (max-width:640px) {
     
     .detail-section{
+        margin-top: 0!important;
 
             .detail-image{
                 margin: 0;
@@ -127,7 +128,7 @@
                     div{
                         margin: 0;
                         padding: 5px;
-                        margin-right: 10px;
+                        margin-right: 5px;
                         width: 80px;
                         height: 80px;
                     }
@@ -149,7 +150,7 @@
             .detail-description{
 
                 a{
-                    padding: 20px 70px;
+                    padding: 20px 50px;
                 }
             }
         

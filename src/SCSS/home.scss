@@ -36,10 +36,15 @@
                     height: 440px;
                     width: 440px;
                     border-radius: 50%;
-                    background: white;
                     position: absolute;
                     bottom: -50px;
                     right: 50px;
+                    background: none;
+                    transition: all ease-in 0.5s;
+
+                    &.active{
+                        background: white;
+                    }
 
                     img{
                         height: 100%;
@@ -131,10 +136,15 @@
     }
     
   }
+
+  @media screen and (max-width: 1026px) {
+    .home-section{
+        padding: 0;
+    }
+  }
   
   @media screen and (max-width: 992px) {
     .home-section{
-      padding: 0 0%;
       margin-top: 10px;
 
 
@@ -197,7 +207,7 @@
                     #circle{
                         height: 300px;
                         width: 300px;
-                        right: 50px;
+                        right: 25%;
                     }
                 }
 
@@ -217,5 +227,29 @@
 
         
 
+    }
+  }
+
+  @media screen and (max-width:450px) {
+    .hero-element{
+
+        .hero-image{
+            
+        #circle{
+            right: 50px!important;
+        }
+        }
+    }
+  }
+
+  @media screen and (max-width:370px) {
+    .hero-element{
+
+        .hero-image{
+            
+        #circle{
+            right: 30px!important;
+        }
+        }
     }
   }

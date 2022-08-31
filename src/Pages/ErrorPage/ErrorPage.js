@@ -1,7 +1,6 @@
 // Librairies
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import '../../SCSS/ErrorPage.scss';
 
 
 const ErrorPage = () => {

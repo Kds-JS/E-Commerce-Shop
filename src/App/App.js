@@ -5,14 +5,14 @@ import { BrowserRouter, Routes,  Route } from 'react-router-dom';
 
 // Components
 import Header from '../Components/Header/Header';
-import Home from '../Components/Home/Home';
 import Footer from '../Components/Footer/Footer';
-import Market from '../Components/Market/Market';
-import Detail from '../Components/Detail/Detail';
-import Cart from '../Components/Cart/Cart';
-import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import ScrollToTop from './ScrollToTop';
 import GlobalContext from './AppContext';
+import Home from '../Pages/Home/Home';
+import Market from '../Pages/Market/Market';
+import Detail from '../Pages/Detail/Detail';
+import Cart from '../Pages/Cart/Cart';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import '../../SCSS/detail.scss';
-import Latest from '../Latest/Latest';
+import BestProduct from '../../Components/BestProduct/BestProduct';
 import { Link, useParams } from 'react-router-dom';
 import {useAppContext} from '../../App/AppContext';
+
 
 
 function Detail() {
@@ -16,14 +16,14 @@ function Detail() {
     
 
     useEffect(() => {
-      fetch(`http://localhost:8000/products/${id}`)
+      fetch(`https://kds-js.github.io/shop.json`)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-        //   console.log(data);
-          setProduct(data);
-          setImageArray(data.image);
+          console.log(data.products[id]);
+          setProduct(data.products[id]);
+          setImageArray(data.products[id].image);
         })
         .catch((error) => {
           console.log(error.message);
@@ -112,7 +112,7 @@ function Detail() {
             </div>
 
 
-            <Latest/>
+            <BestProduct/>
 
         </div>
     );

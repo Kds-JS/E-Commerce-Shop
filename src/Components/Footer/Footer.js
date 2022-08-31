@@ -51,8 +51,8 @@ function Footer(props) {
             </div>
 
             <div className='footer'>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
+                <div className="row">
+                    <div className="col-lg-3 col-md-6">
                         <h3>Produits</h3>
                         <ul>
                         <li>Hommes</li>
@@ -62,7 +62,7 @@ function Footer(props) {
                         </ul>
                     </div>
                 
-                    <div class="col-lg-3 col-md-6">
+                    <div className="col-lg-3 col-md-6">
                         <h3>INFORMATIONS</h3>
                         <ul>
                         <li>À propos de nous</li>
@@ -72,7 +72,7 @@ function Footer(props) {
                         </ul>
                     </div>
                 
-                    <div class="col-lg-3 col-md-6">
+                    <div className="col-lg-3 col-md-6">
                         <h3>POLITIQUE</h3>
                         <ul>
                         <li>Presse</li>
@@ -85,10 +85,10 @@ function Footer(props) {
                         <h3>NEWSLETTER</h3>
                         <form>
                         <div>
-                            <label for="email" class="form-label">Adresse Email</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"/>
+                            <label for="email" className="form-label">Adresse Email</label>
+                            <input type="email" className="form-control" id="email" aria-describedby="emailHelp"/>
                             <p>Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre.</p>
-                            <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+                            <button type="submit" className="btn btn-primary w-100">Envoyer</button>
                         </div>
                         </form>
                     </div>

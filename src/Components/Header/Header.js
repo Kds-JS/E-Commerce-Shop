@@ -10,7 +10,7 @@ import {useAppContext} from '../../App/AppContext';
 
 function Navbar() {
 
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -36,6 +36,13 @@ function Navbar() {
     <header className={menuOpen && "menuActive"}>
       
     <nav className="nav">
+      <div onClick={navToggle} className="menu d-md-none d-flex">
+        <span className='text-black  fs-1' >
+          <HiMenuAlt3/>
+        </span>
+      </div>
+
+
       <Link to="/" className="nav-brand">
         E-Shop
       </Link>
@@ -69,7 +76,7 @@ function Navbar() {
 
       
           <Link to="/cart" className="icon-toggler">
-            <div className=" d-lg-flex d-none">
+            <div className=" d-flex">
               <div className='icon  me-3 text-white '>
                   <BsBag/>
                   {
@@ -79,61 +86,55 @@ function Navbar() {
                   }
               </div>
             </div>
-          </Link>
-
-          <div className='d-lg-none d-flex align-items-center ' >
-              <div className='text-white icon me-3'>
-                  <BsBag/>
-                  {
-                    cart.length !=0 && <div className='cart'>
-                      {cart.length}
-                    </div>
-                  }
-              </div>
-              
-              <div onClick={navToggle} className="menu">
-                <span className='text-black  fs-1' >
-                  <HiMenuAlt3/>
-                </span>
-              </div>
-              
-              
-          </div>
+          </Link>         
 
     </nav> 
 
-    <nav className={active ? "nav-mobile" : "nav-mobile active"}>
-          <ul className="nav_mobile_item">
+    <nav className={active ? "nav-mobile active" : "nav-mobile"}>
 
-              <div onClick={navToggle} className="menu">
+          <div className="nav_mobile_item">
+
+            <div className="d-flex justify-content-between">
+              <Link to="/" className="nav-brand">
+                E-Shop
+              </Link>
+
+              <div onClick={navToggle} className="closeMenu">
                 <span className='text-black  fs-1' >
                   <GrClose/>
                 </span>
               </div>
-        
-              <li onClick={navToggle}>
-                <NavLink to="/" className={({ isActive }) => (isActive ? 'menu-link active' : 'menu-link')}>
-                  Accueil
-                </NavLink>
-              </li>
-              <li onClick={navToggle}>
-                <NavLink to="/shop"  className={({ isActive }) => (isActive ? 'menu-link active' : 'menu-link')}>
-                  Boutique
-                </NavLink>
-              </li>
-              <li >
-                <a href="#" className="menu-link">
-                  Collection
-                </a>
-              </li>
-              <li >
-                <a href="#" className="menu-link">
-                  Blog
-                </a>
-              </li>
+            </div>
+          
 
-        
-          </ul>
+            <ul>
+            
+          
+                <li onClick={navToggle}>
+                  <NavLink to="/" className={({ isActive }) => (isActive ? 'menu-link active' : 'menu-link')}>
+                    Accueil
+                  </NavLink>
+                </li>
+                <li onClick={navToggle}>
+                  <NavLink to="/shop"  className={({ isActive }) => (isActive ? 'menu-link active' : 'menu-link')}>
+                    Boutique
+                  </NavLink>
+                </li>
+                <li >
+                  <a href="#" className="menu-link">
+                    Collection
+                  </a>
+                </li>
+                <li >
+                  <a href="#" className="menu-link">
+                    Blog
+                  </a>
+                </li>
+
+          
+            </ul>
+
+          </div>
 
     </nav>
 

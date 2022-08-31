@@ -1,18 +1,18 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import '../../SCSS/latest.scss';
 
-function Latest(props) {
+
+function BestProduct(props) {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-      fetch(`http://localhost:8000/products`)
+      fetch(`https://kds-js.github.io/shop.json`)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-          console.log(data);
-          setProduct(data);
+        //   console.log(data);
+          setProduct(data.products);
         })
         .catch((error) => {
           console.log(error.message);
@@ -104,4 +104,4 @@ function Latest(props) {
     );
 }
 
-export default Latest;
+export default BestProduct;

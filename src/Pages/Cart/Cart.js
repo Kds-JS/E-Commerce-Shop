@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import '../../SCSS/cart.scss';
 import { GrClose } from 'react-icons/gr';
 import Stepper from 'react-stepper-horizontal';
 import { Link} from "react-router-dom";
@@ -108,7 +107,7 @@ function Cart(props) {
                     
                                 <div className='cart-item2 col-lg-6 col-md-5 d-flex'>
                                     <div className="cart-btn d-flex">
-                                        <button className='btn' id={item.quantity != 1 && "active"} onClick={() => reduceQuantity(item.id,item.quantity)}>-</button>
+                                        <div className='btn' id={item.quantity != 1 && "active"} onClick={() => reduceQuantity(item.id,item.quantity)}>-</div>
                                         <div>{item.quantity}</div>
                                         <div className='btn' id={item.quantity != 10 && "active"} onClick={() => addQuantity(item.id,item.quantity)}>+</div>
                                     </div>
