@@ -118,30 +118,30 @@ function Market(props) {
                                 <h1>Categorys</h1>
                             </div>
                             <ul>
-                                <li id="list-one" onClick={showAll}>
+                                <li id="list-one">
                                     <p>
-                                        <input type="checkbox" checked={checkAll} className='form-check-input me-2'/>
+                                        <input type="checkbox" checked={checkAll} className='form-check-input me-2' onClick={showAll}/>
                                         Tous
                                     </p> 
                                     <span className={checkAll && 'active'}>+{data.length}</span>
                                 </li>
-                                <li onClick={filteredMan} > 
+                                <li  > 
                                     <p>
-                                        <input type="checkbox" checked={checkMan} className='form-check-input me-2' onChange={(e) => setCheckMan(e.target.checked)}/>
+                                        <input type="checkbox" checked={checkMan} className='form-check-input me-2' onChange={(e) => setCheckMan(e.target.checked)} onClick={filteredMan}/>
                                         Hommes
                                     </p> 
                                     <span className={checkMan && 'active'}>+{manArray.length}</span>
                                 </li>
-                                <li onClick={filteredWoman} >
+                                <li  >
                                     <p>
-                                        <input type="checkbox" checked={checkWoman} className='form-check-input me-2' onChange={(e) => setCheckWoman(e.target.checked)}/>
+                                        <input type="checkbox" checked={checkWoman} className='form-check-input me-2' onChange={(e) => setCheckWoman(e.target.checked)} onClick={filteredWoman}/>
                                         Femmes
                                     </p> 
                                     <span className={checkWoman && 'active'}>+{womanArray.length}</span>
                                 </li>
-                                <li onClick={filteredChildren} >
+                                <li >
                                     <p>
-                                        <input type="checkbox" checked={checkChildren} className='form-check-input me-2' onChange={(e) => setCheckChildren(e.target.checked)}/>
+                                        <input type="checkbox" checked={checkChildren} className='form-check-input me-2' onChange={(e) => setCheckChildren(e.target.checked)} onClick={filteredChildren}/>
                                         Enfants
                                     </p>  
                                     <span className={checkChildren && 'active'}>+{childrenArray.length}</span>
