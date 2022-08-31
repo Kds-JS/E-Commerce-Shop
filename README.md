@@ -3,6 +3,7 @@
 [![E-shop App](./src/Images/home.png)](https://twitter.com/kds_JS)
 
 ### C'est une petite application e-commerce avec un système d'ajout au panier
+#### Le site est responsive
 
 ## [LIVE ICI](e-shop-chi.vercel.app/)
 
