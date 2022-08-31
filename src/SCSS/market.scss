@@ -38,7 +38,10 @@
                 @include flex-1(row, space-between);
                 font-size: 20px;
                 margin-top: 20px;
-                cursor: pointer;
+
+                input{
+                    cursor: pointer;
+                }
 
                 p{
                     margin: 0;
