@@ -1,22 +1,37 @@
 import React, { createContext, useContext, useState } from "react";
 
-export const AppContext = createContext();
+const CartContext = createContext();
+const UpdateCartContext = createContext();
 
-export function useAppContext() {
-    return useContext(AppContext);
+export function useCartContext() {
+    const context =  useContext(CartContext);
+
+    if(!context) {
+        throw new Error("useCartContext must be used inside CartProvider");
+    }
+
+    return context;
+  }
+
+  export function useUpdateCartContext() {
+    const context = useContext(UpdateCartContext);
+
+    if(!context) {
+        throw new Error("useCartContext must be used inside CartProvider");
+    }
+
+    return context;
   }
 
 function GlobalContext({children}) {
     const [cart,setCart] = useState([]);  
-    const contextValue = {
-        cart,
-        setCart
-    }
 
     return(
-        <AppContext.Provider value={contextValue}>
+        <CartContext.Provider value={cart}>
+            <UpdateCartContext.Provider value={setCart}>
             {children}
-        </AppContext.Provider>
+            </UpdateCartContext.Provider>
+        </CartContext.Provider>
     )
 }
 

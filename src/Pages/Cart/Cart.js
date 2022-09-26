@@ -2,12 +2,13 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { GrClose } from 'react-icons/gr';
 import Stepper from 'react-stepper-horizontal';
 import { Link} from "react-router-dom";
-import {useAppContext} from '../../App/AppContext';
+import {useCartContext,useUpdateCartContext} from '../../App/AppContext';
 
 function Cart() {
     const [CartOpen,setCartOpen] = useState(false);
-    const {cart, setCart} = useAppContext();
     const [total,setTotal] = useState(0);
+    const cart = useCartContext();
+    const setCart = useUpdateCartContext();
     
 
     useEffect(() => {

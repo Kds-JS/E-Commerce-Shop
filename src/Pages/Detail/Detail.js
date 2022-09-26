@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BestProduct from '../../Components/BestProduct/BestProduct';
 import { Link, useParams } from 'react-router-dom';
-import {useAppContext} from '../../App/AppContext';
+import {useUpdateCartContext} from '../../App/AppContext';
 
 
 
@@ -12,7 +12,7 @@ function Detail() {
     const {id}  = useParams();
     const [product, setProduct] = useState({});
 
-    const {cart, setCart} = useAppContext();
+    const setCart = useUpdateCartContext();
     
 
     useEffect(() => {

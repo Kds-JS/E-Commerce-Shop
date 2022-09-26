@@ -4,7 +4,7 @@ import '../../SCSS/header.scss';
   import { HiMenuAlt3 } from 'react-icons/hi';
   import { GrClose } from 'react-icons/gr';
 import { Link, NavLink } from "react-router-dom";
-import {useAppContext} from '../../App/AppContext';
+import {useCartContext} from '../../App/AppContext';
 
 
 
@@ -131,7 +131,7 @@ function Navbar() {
 export default Navbar;
 
 const CartLink = () => {
-  const {cart} = useAppContext();
+  const cart = useCartContext();
 
 
   return (
