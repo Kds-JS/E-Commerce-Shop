@@ -14,7 +14,6 @@ function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const {cart, setCart} = useAppContext();
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -73,20 +72,7 @@ function Navbar() {
         
       </ul>
       
-
-      
-          <Link to="/cart" className="icon-toggler">
-            <div className=" d-flex">
-              <div className='icon  me-3 text-white '>
-                  <BsBag/>
-                  {
-                    cart !=0 && <div className='cart'>
-                      {cart.length}
-                    </div>
-                  }
-              </div>
-            </div>
-          </Link>         
+      <CartLink/>       
 
     </nav> 
 
@@ -143,3 +129,23 @@ function Navbar() {
 }
 
 export default Navbar;
+
+const CartLink = () => {
+  const {cart} = useAppContext();
+
+
+  return (
+    <Link to="/cart" className="icon-toggler">
+      <div className=" d-flex">
+        <div className='icon  me-3 text-white '>
+            <BsBag/>
+            {
+              cart !=0 && <div className='cart'>
+                {cart.length}
+              </div>
+            }
+        </div>
+      </div>
+    </Link>  
+  )
+}
